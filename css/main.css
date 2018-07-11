@@ -42,8 +42,6 @@ body {
 .listado__items--favorito {
   background-color: #10a0f3;
   border: 1px solid blue;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
 }
 
 .items__title {

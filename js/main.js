@@ -9,7 +9,7 @@ function resetear() {
 }
 function buscaSerie() {
   resetear();
-  fetch('http://api.tvmaze.com/search/shows?q=' + input.value)
+  fetch('https://api.tvmaze.com/search/shows?q=' + input.value)
     .then(function (response) {
       return response.json();
     })

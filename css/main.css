@@ -1,2 +1,15 @@
+img {
+  width: 210px;
+  height: 290px;
+}
+
+.listado__items {
+  list-style: none;
+  background-color: pink;
+}
+
+.listado__items--favorito {
+  background-color: red;
+}
 
 /*# sourceMappingURL=main.css.map */

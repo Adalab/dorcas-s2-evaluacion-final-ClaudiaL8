@@ -1,13 +1,51 @@
 @import 'core/settings';
+body{
+    font-weight: 600;
+}
+
+.main__firstSection{
+    text-align: center;
+}
+.buscador__input{
+    border: 0;
+    border-bottom: 1px solid rgb(25, 92, 11);
+}
+.buscador__boton{
+background-color: rgb(173, 31, 78);
+border:0;
+border-radius: 0;
+color:white;
+height: 25px;
+width: 80px;
+font-size: 15px;
+font-weight: 700;
+}
+
+.secondSection__listado{
+text-align: center;
+margin-top: 0;
+}
+.listado__items{
+    list-style: none;
+    background-color: rgb(236, 187, 217);
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 30px;
+    height: 360px;
+    width: 270px;
+text-align: center;
+padding-top: 20px;
+}
+.listado__items--favorito{
+    background-color: rgb(16, 160, 243);
+    border: 1px solid blue;
+    box-sizing: content-box;
+}
+.items__title{
+    margin-top: 7px;
+    color: rgb(173, 31, 78);
+}
 img{
     width: 210px;
     height: 290px;
-}
-
-.listado__items{
-    list-style: none;
-    background-color: pink;
-}
-.listado__items--favorito{
-    background-color: red;
 }

@@ -3,8 +3,6 @@
 var boton = document.querySelector('.buscador__boton');
 var input = document.querySelector('.buscador__input');
 var ul = document.querySelector('.secondSection__listado');
-var series;
-var li;
 
 function resetear() {
   ul.innerHTML = '';
@@ -16,18 +14,25 @@ function buscaSerie() {
       return response.json();
     })
     .then(function (json) {
-      series = json;
+
+      var series = json;
+
       for (var i = 0; i < series.length; i++) {
-        li = document.createElement('li');
-        li.classList.add('listado__items');
-        var image = document.createElement('img');
-        li.appendChild(image);
+
+        var li = document.createElement('li');
         var h2 = document.createElement('h2');
+        var image = document.createElement('img');
         var content = document.createTextNode(series[i].show.name);
+
+        li.classList.add('listado__items');
+        h2.classList.add('items__title');
+        li.appendChild(image);
         h2.appendChild(content);
         ul.appendChild(li);
         li.appendChild(h2);
+        
         li.addEventListener('click', favorito);
+        
         if (series[i].show.image === null) {
           image.src = ('https://via.placeholder.com/210x295/cccccc/666666/?text=TV');
         } else {
@@ -36,8 +41,10 @@ function buscaSerie() {
       }
     });
 }
-function favorito() {
-  li.classList.toggle('listado__items--favorito');
+function favorito(event) { //esta función recibe como parámetro un evento que ha sido disparado e identifica quién lo disparó para añadirle o quitarle una clase.
+  // li.classList.toggle('listado__items--favorito'); --> el último es sobre quien actúa la función.
+  // event.currentTarget; --> identifica el elemento que ha llamado a la función. 
+  event.currentTarget.classList.toggle('listado__items--favorito');
 }
 
 boton.addEventListener('click', buscaSerie);

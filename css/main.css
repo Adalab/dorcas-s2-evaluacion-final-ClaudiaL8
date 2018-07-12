@@ -11,6 +11,7 @@ body {
   border: 0;
   border-bottom: 1px solid #195c0b;
   width: 320px;
+  font-size: 16px;
 }
 
 .buscador__boton {
@@ -18,7 +19,7 @@ body {
   border: 0;
   border-radius: 0;
   color: white;
-  height: 25px;
+  height: 27px;
   width: 80px;
   font-size: 15px;
   font-weight: 700;
@@ -44,6 +45,10 @@ body {
 
 .listado__items--favorito {
   background-color: #10a0f3;
+  border: 5px solid blue;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 410px;
 }
 
 .items__title {

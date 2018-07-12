@@ -2,58 +2,58 @@
 @import 'core/settings';
 
 body{
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .main__firstSection{
-    text-align: center;
-    margin-bottom: 36px;
+  text-align: center;
+  margin-bottom: 36px;
 }
 .buscador__input{
-    border: 0;
-    border-bottom: 1px solid $darkGreen;
-    width: 320px;
+  border: 0;
+  border-bottom: 1px solid $darkGreen;
+  width: 320px;
+  font-size: 16px;
 }
 .buscador__boton{
-    background-color: $burgundy;
-    border:0;
-    border-radius: 0;
-    color:white;
-    height: 25px;
-    width: 80px;
-    font-size: 15px;
-    font-weight: 700;
+  background-color: $burgundy;
+  border:0;
+  border-radius: 0;
+  color:white;
+  height: 27px;
+  width: 80px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .secondSection__listado{
-    margin-top: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    padding-left: 0;
-    border-left: 20px solid white;
-    border-right: 20px solid white;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-left: 0;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
 }
 .listado__items{
-    list-style: none;
-    background-color: $lightPink;
-    text-align: center;
-    padding-top: 30px;
-    // box-shadow: 0 0 0 1 rgb(19, 19, 112);
-    height: 380px ;
-
-    }
+  list-style: none;
+  background-color: $lightPink;
+  text-align: center;
+  padding-top: 30px;
+  height: 380px;
+  }
 .listado__items--favorito{
-    background-color: $lightBlue;
-    
+  background-color: $lightBlue;
+  border: 5px solid blue;
+  box-sizing: border-box;
+  height: 410px;
 }
 .items__title{
-    margin:0;
-    padding-top: 7px;
-    color: $burgundy;
-    
+  margin:0;
+  padding-top: 7px;
+  color: $burgundy;
 }
 img{
-    width: 210px;
-    height: 290px;
+  width: 210px;
+  height: 290px;
 }

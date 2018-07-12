@@ -3,7 +3,9 @@
 var boton = document.querySelector('.buscador__boton');
 var input = document.querySelector('.buscador__input');
 var ul = document.querySelector('.secondSection__listado');
-var series;
+var li;
+
+
 
 function resetear() {
   ul.innerHTML = '';
@@ -20,13 +22,17 @@ function buscaSerie() {
 
       for (var i = 0; i < series.length; i++) {
 
-        var li = document.createElement('li');
+        li = document.createElement('li');
         var h2 = document.createElement('h2');
         var image = document.createElement('img');
         var content = document.createTextNode(series[i].show.name);
-
+        // crear atributo y meter el id
+        var id = (series[i].show.id);
+        li.setAttribute('data-id', id);
+        // -----------------------------
         li.classList.add('listado__items');
         h2.classList.add('items__title');
+        image.classList.add('imagen');
         li.appendChild(image);
         h2.appendChild(content);
         ul.appendChild(li);
@@ -42,11 +48,31 @@ function buscaSerie() {
       }
     });
 }
+// function guardar() {
+//   fetch('https://api.tvmaze.com/search/shows?q=' + input.value)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (json) {
+
+//       var series = json;
+
+//       for (var i = 0; i < series.length; i++) {
+//         var li = document.createElement('li');
+//         var id = (series[i].show.id);
+//         li.setAttribute('data-id', series[i].show.id);
+//         localStorage.setItem('favorito', data-id);
+//       }
+//     });
+// }
 function favorito(event) { //esta función recibe como parámetro un evento que ha sido disparado e identifica quién lo disparó para añadirle o quitarle una clase.
-  // li.classList.toggle('listado__items--favorito'); --> el último es sobre quien actúa la función.
+  // li.classList.toggle('listado__items--favorito'); --> para poner/quitar una clase en caso de que no la tenga (o sí).
   // event.currentTarget; --> identifica el elemento que ha llamado a la función. 
   event.currentTarget.classList.toggle('listado__items--favorito');
 }
 
-boton.addEventListener('click', buscaSerie);
+// elementoFavorito.addEventListener('click', guardar);
 
+
+
+boton.addEventListener('click', buscaSerie);

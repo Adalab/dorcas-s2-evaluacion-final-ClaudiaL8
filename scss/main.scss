@@ -10,7 +10,7 @@ body{
 }
 .buscador__input{
     border: 0;
-    border-bottom: 1px solid rgb(25, 92, 11);
+    border-bottom: 1px solid $darkGreen;
 }
 .buscador__boton{
     background-color: $burgundy;
@@ -21,6 +21,10 @@ body{
     width: 80px;
     font-size: 15px;
     font-weight: 700;
+    transition: border-color ease 1s;
+    &:hover {
+        border: 1px solid aqua;
+    }
 }
 
 .secondSection__listado{
@@ -41,7 +45,7 @@ body{
 }
 .listado__items--favorito{
     background-color: $lightBlue;
-    border: 1px solid blue;
+    box-shadow: 0 0 0 4 rgb(33, 33, 131);
 }
 .items__title{
     margin-top: 7px;

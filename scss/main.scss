@@ -1,4 +1,6 @@
+@import "core/variables";
 @import 'core/settings';
+
 body{
     font-weight: 600;
 }
@@ -11,7 +13,7 @@ body{
     border-bottom: 1px solid rgb(25, 92, 11);
 }
 .buscador__boton{
-    background-color: rgb(173, 31, 78);
+    background-color: $burgundy;
     border:0;
     border-radius: 0;
     color:white;
@@ -27,22 +29,24 @@ body{
 }
 .listado__items{
     list-style: none;
-    background-color: rgb(236, 187, 217);
+    background-color: $lightPink;
     display: inline-block;
     margin-right: 20px;
     margin-top: 30px;
-    height: 360px;
+    height: 380px;
     width: 270px;
     text-align: center;
     padding-top: 20px;
+    box-sizing: border-box;
 }
 .listado__items--favorito{
-    background-color: rgb(16, 160, 243);
+    background-color: $lightBlue;
     border: 1px solid blue;
 }
 .items__title{
     margin-top: 7px;
-    color: rgb(173, 31, 78);
+    color: $burgundy;
+    
 }
 img{
     width: 210px;

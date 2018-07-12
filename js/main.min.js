@@ -3,6 +3,7 @@
 var boton = document.querySelector('.buscador__boton');
 var input = document.querySelector('.buscador__input');
 var ul = document.querySelector('.secondSection__listado');
+var series;
 
 function resetear() {
   ul.innerHTML = '';
@@ -33,10 +34,10 @@ function buscaSerie() {
         
         li.addEventListener('click', favorito);
         
-        if (series[i].show.image === null) {
-          image.src = ('https://via.placeholder.com/210x295/cccccc/666666/?text=TV');
-        } else {
+        if (series[i].show.image !== null) {
           image.src = series[i].show.image.medium;
+        } else {
+          image.src = ('https://via.placeholder.com/210x295/cccccc/666666/?text=TV');
         }
       }
     });

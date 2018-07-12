@@ -4,11 +4,13 @@ body {
 
 .main__firstSection {
   text-align: center;
+  margin-bottom: 36px;
 }
 
 .buscador__input {
   border: 0;
   border-bottom: 1px solid #195c0b;
+  width: 320px;
 }
 
 .buscador__boton {
@@ -20,41 +22,33 @@ body {
   width: 80px;
   font-size: 15px;
   font-weight: 700;
-  -webkit-transition: border-color ease 1s;
-  transition: border-color ease 1s;
-}
-
-.buscador__boton:hover {
-  border: 1px solid aqua;
 }
 
 .secondSection__listado {
-  text-align: center;
   margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding-left: 0;
+  border-left: 20px solid white;
+  border-right: 20px solid white;
 }
 
 .listado__items {
   list-style: none;
   background-color: #ecbbd9;
-  display: inline-block;
-  margin-right: 20px;
-  margin-top: 30px;
-  height: 380px;
-  width: 270px;
   text-align: center;
-  padding-top: 20px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  padding-top: 30px;
+  height: 380px;
 }
 
 .listado__items--favorito {
   background-color: #10a0f3;
-  -webkit-box-shadow: 0 0 0 4 #212183;
-  box-shadow: 0 0 0 4 #212183;
 }
 
 .items__title {
-  margin-top: 7px;
+  margin: 0;
+  padding-top: 7px;
   color: #ad1f4e;
 }
 

@@ -10,7 +10,7 @@ function resetear() {
 }
 function buscaSerie() {
   resetear();
-  fetch('https://api.tvmaze.com/search/shows?q=' + input.value)
+  fetch('https://api.tvmaze.com/search/people?q=' + input.value)
     .then(function (response) {
       return response.json();
     })
@@ -23,7 +23,7 @@ function buscaSerie() {
         var li = document.createElement('li');
         var h2 = document.createElement('h2');
         var image = document.createElement('img');
-        var content = document.createTextNode(series[i].show.name);
+        var content = document.createTextNode(series[i].person.name);
 
         li.classList.add('listado__items');
         h2.classList.add('items__title');
@@ -31,11 +31,21 @@ function buscaSerie() {
         h2.appendChild(content);
         ul.appendChild(li);
         li.appendChild(h2);
-        
+        var parrafo = document.createElement('p');
+        li.appendChild(parrafo);
+
+        if( series[i].person.country === null){
+          parrafo.innerHTML = 'No tengo pais';
+        }else{
+
+          var pais = document.createTextNode(series[i].person.country.name);
+          parrafo.appendChild(pais);
+        }
+
         li.addEventListener('click', favorito);
-        
-        if (series[i].show.image !== null) {
-          image.src = series[i].show.image.medium;
+
+        if (series[i].person.image !== null) {
+          image.src = series[i].person.image.medium;
         } else {
           image.src = ('https://via.placeholder.com/210x295/cccccc/666666/?text=TV');
         }
@@ -44,7 +54,7 @@ function buscaSerie() {
 }
 function favorito(event) { //esta función recibe como parámetro un evento que ha sido disparado e identifica quién lo disparó para añadirle o quitarle una clase.
   // li.classList.toggle('listado__items--favorito'); --> el último es sobre quien actúa la función.
-  // event.currentTarget; --> identifica el elemento que ha llamado a la función. 
+  // event.currentTarget; --> identifica el elemento que ha llamado a la función.
   event.currentTarget.classList.toggle('listado__items--favorito');
 }
 
